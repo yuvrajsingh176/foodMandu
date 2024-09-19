@@ -4,8 +4,6 @@ import RestaurantDetail from "./components/RestaurantDetail";
 import Cart from "./components/Cart";
 import Restaurants from "./components/Restaurants";
 import RestaurantsLayout from "./components/RestaurantsLayout";
-import Cafe from "./components/cafe";
-import Food from "./components/food";
 import Home from "./components/Home";
 import { useEffect } from "react";
 
