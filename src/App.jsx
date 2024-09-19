@@ -34,8 +34,6 @@ function App() {
           <Route index element={<Home />} />
           <Route path="restaurants" element={<RestaurantsLayout />}>
             <Route index element={<Restaurants />} />
-            <Route path="cafe" element={<Cafe />} />
-            <Route path="food" element={<Food />} />
             <Route path="details/:id" element={<RestaurantDetail />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
