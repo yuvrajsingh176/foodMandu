@@ -20,6 +20,7 @@ const RestaurantDetail = () => {
       "https://foodmandu.com/webapi/api/vendor/GetVendorDetail?VendorId=" +
         vendorId
     );
+
     const jsonData = await data.json();
     setRestaurantData(jsonData[0]);
   };
@@ -87,16 +88,17 @@ const RestaurantDetail = () => {
       </div>
       {/* Menu */}
       <div>
-      
         <div className="max-w-[900px] mx-auto p-4 flex flex-col gap-12">
           {restaurantCategory?.map((category, index) => (
             <div key={index}>
               <p className="p-2 bg-[#fbf9f9] border-b text-xl">
                 {category?.category}
               </p>
-              {category?.items.map((item, index) => (
-                <Category key={index} item={item} />
-              ))}
+              <span >
+                {category?.items.map((item, index) => (
+                  <Category key={index} item={item} />
+                ))}
+              </span>
             </div>
           ))}
         </div>

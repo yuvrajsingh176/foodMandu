@@ -33,6 +33,7 @@ const Restaurants = () => {
         `https://foodmandu.com/webapi/api/Vendor/GetVendors1?Cuisine=&DeliveryZoneId=${statezoneId}&IsFavorite=false&IsRecent=false&Keyword=${query}&LocationLat=${latitude}&LocationLng=${longitude}&PageNo=${page}&PageSize=6&SortBy=4&VendorName=&VendorTags=%7B%22FEATURED%22:true%7D&search_by=restaurant`
       );
       const jsonData = await data.json();
+
       if (previousLocation === stateLocation) {
         setFeaturedRestaurants((prevRestaurants) => [
           ...prevRestaurants,
@@ -40,6 +41,7 @@ const Restaurants = () => {
         ]);
       } else {
         setFeaturedRestaurants(jsonData);
+        setPreviousLocation(stateLocation);
       }
 
       setHasMore(jsonData.length > 0);

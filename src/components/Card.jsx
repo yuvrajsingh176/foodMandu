@@ -9,7 +9,10 @@ const Card = ({ data, home }) => {
       to={"/restaurants/details/" + data?.Id}
       className="p-2 flex flex-col items-center rounded-md"
     >
-      <img className="h-52 w-96 rounded-md  " src={data?.VendorListingWebImageName} />
+      <img
+        className="h-52 w-96 rounded-md  "
+        src={data?.VendorListingWebImageName}
+      />
       <div className="flex flex-col items-start w-full">
         <p className="flex sm:items-center sm:w-full sm:justify-center md:justify-start text-xl py-2">
           {data?.Name}

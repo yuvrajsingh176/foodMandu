@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const [featuredRestaurants, setFeaturedRestaurants] = useState([]);
+
   const getFeaturedRestaurants = async () => {
     const data = await fetch(
-      "https://foodmandu.com/webapi/api/Vendor/GetVendors1?Cuisine=&DeliveryZoneId=1&IsFavorite=false&IsRecent=false&Keyword=&LocationLat=27.7026754&LocationLng=85.3191018&PageNo=1&PageSize=6&SortBy=4&VendorName=&VendorTags=%7B%22FEATURED%22:true%7D&VendorTagsCSV=FEATURED,&filtertags=FEATURED&search_by=restaurant"
+      "https://foodmandu.com/webapi/api/Vendor/GetVendors1?Cuisine=&DeliveryZoneId=1&IsFavorite=false&IsRecent=false&Keyword=&LocationLat=27.7026754&LocationLng=85.3191018&PageNo=1&PageSize=8&SortBy=4&VendorName=&VendorTags=%7B%22FEATURED%22:true%7D&VendorTagsCSV=FEATURED,&filtertags=FEATURED&search_by=restaurant"
     );
     const jsonData = await data.json();
     setFeaturedRestaurants(jsonData);
@@ -18,10 +19,11 @@ const Home = () => {
   useEffect(() => {
     getFeaturedRestaurants();
   }, []);
+  
   return (
     <div>
       <div className="relative">
-        <img className="flex w-full h-[800px]" src={HomeBgImage} />
+        <img className=" w-full h-[800px]" src={HomeBgImage} />
         <div className="absolute top-0 right-0 bottom-0 left-0 flex text-xl gap-4 flex-col items-center justify-center w-full">
           <div>
           <p className="flex items-center justify-center mx-4">
